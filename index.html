@@ -145,9 +145,11 @@
         $greeting.textContent = "こんにちは！";
 
         $profile.style.display = "block";
-        $profile.innerHTML =
-          '<img src="' + profile.pictureUrl + '" alt="icon">' +
-          '<div class="name">' + profile.displayName + '</div>';
+        var avatarHtml = profile.pictureUrl
+          ? '<img src="' + profile.pictureUrl + '" alt="">'
+          : '';
+        $profile.innerHTML = avatarHtml +
+          '<div class="name">' + profile.displayName + ' さん</div>';
 
         $status.textContent = "LINE ログイン済み";
 
